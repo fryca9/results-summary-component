@@ -6,13 +6,13 @@
 
 :root {
   --reaction-caption: hsl(0, 100%, 67%);
-  --reaction-bg: hsl(0, 81%, 85%);
+  --reaction-bg: hsl(0, 78%, 95%);
   --memory-caption: hsl(39, 100%, 56%);
-  --memory-bg: hsl(39, 97%, 85%);
+  --memory-bg: hsl(39, 97%, 95%);
   --verbal-caption: hsl(166, 100%, 37%);
-  --verbal-bg: hsl(166, 100%, 85%);
+  --verbal-bg: hsl(166, 100%, 95%);
   --visual-caption: hsl(234, 85%, 45%);
-  --visual-bg: hsl(234, 85%, 85%);
+  --visual-bg: hsl(234, 85%, 95%);
 
   --result-bg-gradient: linear-gradient(
     0deg,
@@ -48,12 +48,12 @@ html {
   height: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 #result {
   background: var(--result-bg-gradient);
   border-radius: 25px;
+  align-items: center;
 }
 
 .result__heading {
@@ -97,3 +97,80 @@ html {
 #summary {
   background-color: var(--summary-bg);
 }
+
+.summary__heading {
+  width: 80%;
+  padding: 30px 0;
+  margin: 0 auto;
+}
+
+.summary__container {
+  width: 100%;
+}
+
+.summary__container > * {
+  background-color: blue;
+  display: flex;
+  width: 80%;
+  height: 45px;
+  margin: 0 auto 15px;
+  padding: 0 10px;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.summary__container--title,
+.summary__container--score {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.summary__container--score > p {
+  color: grey;
+}
+
+.summary__container--reaction {
+  background-color: var(--reaction-bg);
+}
+.summary__container--reaction > .summary__container--title {
+  color: var(--reaction-caption);
+}
+
+.summary__container--memory {
+  background-color: var(--memory-bg);
+}
+.summary__container--memory > .summary__container--title {
+  color: var(--memory-caption);
+}
+
+.summary__container--verbal {
+  background-color: var(--verbal-bg);
+}
+.summary__container--verbal > .summary__container--title {
+  color: var(--verbal-caption);
+}
+
+.summary__container--visual {
+  background-color: var(--visual-bg);
+}
+.summary__container--visual > .summary__container--title {
+  color: var(--visual-caption);
+}
+
+.summary__button--continue {
+  width: 80%;
+  height: 45px;
+  background-color: var(--button-color);
+  margin: 10px auto;
+  color: var(--website-bg);
+  border: none;
+  border-radius: 35px;
+  font-size: 18px;
+}
+
+
+/* TODO: 
+  -> zrobic aby na siebie nachodzily te cards
+  -> clean the code
+  -> start working on the mobile version
