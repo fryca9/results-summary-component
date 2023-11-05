@@ -40,7 +40,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* come back later */
+  height: 100vh; 
 }
 
 .card {
@@ -54,6 +54,8 @@ html {
   background: var(--result-bg-gradient);
   border-radius: 25px;
   align-items: center;
+  position: relative;
+  left: 20px;
 }
 
 .result__heading {
@@ -96,22 +98,28 @@ html {
 
 #summary {
   background-color: var(--summary-bg);
+  width: 320px;
+  border-radius: 0 25px 25px 0;
 }
 
-.summary__heading {
+.summary__card {
+  width: 300px;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.summary__items {
   width: 80%;
-  padding: 30px 0;
   margin: 0 auto;
 }
 
-.summary__container {
-  width: 100%;
+.summary__heading {
+  padding: 30px 0;
 }
 
 .summary__container > * {
   background-color: blue;
   display: flex;
-  width: 80%;
   height: 45px;
   margin: 0 auto 15px;
   padding: 0 10px;
@@ -159,18 +167,17 @@ html {
 }
 
 .summary__button--continue {
-  width: 80%;
+  width: 100%;
   height: 45px;
   background-color: var(--button-color);
-  margin: 10px auto;
   color: var(--website-bg);
   border: none;
   border-radius: 35px;
   font-size: 18px;
+  margin: 10px auto;
 }
 
 
 /* TODO: 
-  -> zrobic aby na siebie nachodzily te cards
   -> clean the code
   -> start working on the mobile version
