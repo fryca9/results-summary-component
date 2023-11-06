@@ -36,11 +36,13 @@ html {
   font-family: "Hanken Grotesk", sans-serif;
 }
 
+/* ========================================== */
+
 .two-cards {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 90vh;
 }
 
 .card {
@@ -96,16 +98,19 @@ html {
   text-align: center;
 }
 
-#summary {
+/* ========================================== */
+
+.block {
+  width: 20px;
+  height: 400px;
   background-color: var(--summary-bg);
-  width: 320px;
-  border-radius: 0 25px 25px 0;
 }
 
-.summary__card {
-  width: 300px;
-  height: 100%;
-  margin-left: 20px;
+/* ========================================== */
+
+#summary {
+  background-color: var(--summary-bg);
+  border-radius: 0 25px 25px 0;
 }
 
 .summary__items {
@@ -175,6 +180,17 @@ html {
   border-radius: 35px;
   font-size: 18px;
   margin: 10px auto;
+}
+
+/* ========================================== */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 
