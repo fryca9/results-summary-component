@@ -29,6 +29,8 @@
 
   --result-text: hsl(241, 100%, 89%);
   --button-color: hsl(224, 30%, 27%);
+
+  --cards-shadow: 1px 10px 20px hsla(224, 30%, 27%, .3);
 }
 
 html {
@@ -36,81 +38,101 @@ html {
   font-family: "Hanken Grotesk", sans-serif;
 }
 
+main {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ========================================== */
 
 .two-cards {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 90vh;
+  border-radius: 25px;
+  box-shadow: var(--cards-shadow)
+}
+
+.card, 
+.block {
+  height: 400px;
 }
 
 .card {
   width: 300px;
-  height: 400px;
   display: flex;
-  flex-direction: column;
 }
 
 #result {
-  background: var(--result-bg-gradient);
-  border-radius: 25px;
+  flex-direction: column;
   align-items: center;
-  position: relative;
-  left: 20px;
+  border-radius: 25px;
+  background: var(--result-bg-gradient);
 }
 
-.result__heading {
+.result__heading,
+.result__of-hundred,
+.result__descr {
   color: var(--result-text);
+}
+
+.result__score,
+.result__word,
+.summary__button--continue {
+  color: var(--website-bg);
+}
+
+.result__heading,
+.summary__heading {
   padding: 30px 0;
 }
 
 .circle {
-  background: var(--result-circle-bg);
   width: 150px;
   height: 150px;
-  border-radius: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 100px;
+  background: var(--result-circle-bg);
 }
 
 .result__score {
   font-size: 48px;
   font-weight: 800;
-  color: var(--website-bg);
-}
-
-.result__of-hundred {
-  color: var(--result-text);
 }
 
 .result__word {
-  color: var(--website-bg);
   padding: 20px 0;
 }
 
 .result__descr {
-  color: var(--result-text);
-  font-size: 14px;
   width: 60%;
+  font-size: 14px;
   text-align: center;
 }
 
 /* ========================================== */
 
 .block {
-  width: 20px;
+  width: 40px;
   height: 400px;
-  background-color: var(--summary-bg);
+  position: absolute;
+  z-index: -1;
 }
 
 /* ========================================== */
 
 #summary {
-  background-color: var(--summary-bg);
   border-radius: 0 25px 25px 0;
+}
+
+.block,
+#summary {
+  background-color: var(--summary-bg);
 }
 
 .summary__items {
@@ -118,16 +140,11 @@ html {
   margin: 0 auto;
 }
 
-.summary__heading {
-  padding: 30px 0;
-}
-
 .summary__container > * {
-  background-color: blue;
-  display: flex;
   height: 45px;
   margin: 0 auto 15px;
   padding: 0 10px;
+  display: flex;
   justify-content: space-between;
   border-radius: 10px;
 }
@@ -174,12 +191,15 @@ html {
 .summary__button--continue {
   width: 100%;
   height: 45px;
-  background-color: var(--button-color);
-  color: var(--website-bg);
+  margin: 10px auto;
   border: none;
   border-radius: 35px;
   font-size: 18px;
-  margin: 10px auto;
+  background-color: var(--button-color);
+}
+
+.summary__button--continue:hover {
+  background: var(--result-bg-gradient);
 }
 
 /* ========================================== */
@@ -195,5 +215,4 @@ html {
 
 
 /* TODO: 
-  -> clean the code
   -> start working on the mobile version
