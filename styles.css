@@ -30,7 +30,7 @@
   --result-text: hsl(241, 100%, 89%);
   --button-color: hsl(224, 30%, 27%);
 
-  --cards-shadow: 1px 10px 20px hsla(224, 30%, 27%, .3);
+  --cards-shadow: 1px 10px 20px hsla(224, 30%, 27%, 0.3);
 }
 
 html {
@@ -52,10 +52,10 @@ main {
   display: flex;
   justify-content: center;
   border-radius: 25px;
-  box-shadow: var(--cards-shadow)
+  box-shadow: var(--cards-shadow);
 }
 
-.card, 
+.card,
 .block {
   height: 400px;
 }
@@ -63,12 +63,12 @@ main {
 .card {
   width: 300px;
   display: flex;
+  border-radius: 25px;
 }
 
 #result {
   flex-direction: column;
   align-items: center;
-  border-radius: 25px;
   background: var(--result-bg-gradient);
 }
 
@@ -125,10 +125,6 @@ main {
 }
 
 /* ========================================== */
-
-#summary {
-  border-radius: 0 25px 25px 0;
-}
 
 .block,
 #summary {
@@ -213,6 +209,34 @@ main {
   color: hsl(228, 45%, 44%);
 }
 
+/* ========================================== */
 
-/* TODO: 
-  -> start working on the mobile version
+@media (max-width: 650px) {
+  main {
+    height: auto;
+    padding: 50px;
+  }
+
+  .two-cards {
+    flex-direction: column;
+  }
+
+  .block {
+    height: 40px;
+    width: 300px;
+  }
+
+  .attribution {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 310px) {
+  main,
+  .two-cards,
+  .card,
+  .block {
+    width: 90vw;
+    margin: 0 auto;
+  }
+}
