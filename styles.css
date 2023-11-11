@@ -40,7 +40,6 @@ html {
 
 main {
   height: 90vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,13 +54,9 @@ main {
   box-shadow: var(--cards-shadow);
 }
 
-.card,
-.block {
-  height: 400px;
-}
-
 .card {
-  width: 300px;
+  height: 400px;
+  width: 100%;
   display: flex;
   border-radius: 25px;
 }
@@ -118,8 +113,8 @@ main {
 /* ========================================== */
 
 .block {
-  width: 40px;
   height: 400px;
+  width: 40px;
   position: absolute;
   z-index: -1;
 }
@@ -201,6 +196,8 @@ main {
 /* ========================================== */
 
 .attribution {
+  width: 80%;
+  margin: 0 auto;
   font-size: 11px;
   text-align: center;
 }
@@ -211,19 +208,20 @@ main {
 
 /* ========================================== */
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   main {
     height: auto;
-    padding: 50px;
+    margin-bottom: 30px;
   }
 
   .two-cards {
     flex-direction: column;
+    width: 400px;
+    margin-top: 20px;
   }
 
   .block {
-    height: 40px;
-    width: 300px;
+    width: 400px;
   }
 
   .attribution {
@@ -231,12 +229,21 @@ main {
   }
 }
 
-@media (max-width: 310px) {
-  main,
+@media (max-width: 500px) {
   .two-cards,
-  .card,
   .block {
-    width: 90vw;
-    margin: 0 auto;
+    width: 75%;
+  }
+}
+
+@media (max-width: 400px) {
+  .two-cards,
+  .block {
+    width: 100%;
+    margin: 0;
+  }
+
+  #result {
+    border-radius: 0 0 25px 25px;
   }
 }
